@@ -8,8 +8,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class LendPanel extends JPanel {
-    public LendPanel(MainFrame frame) {
+public class RentPanel extends JPanel {
+    public RentPanel(MainFrame frame) {
     	setLayout(new GridLayout(4, 2));
         //ボタンとかフィールド作成
     	JTextField memberidField = new JTextField(); 
@@ -20,7 +20,7 @@ public class LendPanel extends JPanel {
 
         //DB実行
     	lendBtn.addActionListener(e -> {
-    		DB.lendBook(memberidField.getText(), bookCodeField.getText());
+    		Rental.lendBook(memberidField.getText(), bookCodeField.getText());
     		JOptionPane.showMessageDialog(this, "貸出しました。");
     	});
 

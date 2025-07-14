@@ -5,14 +5,14 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class TopPanel extends JPanel {
-    public TopPanel(MainFrame frame) {
+public class SelectOptPanel extends JPanel {
+    public SelectOptPanel(MainFrame frame) {
        frame.setLayout(new GridLayout(6, 1, 10, 10));
 
        // 「本の登録」ボタンを作成し、クリックされたら "BOOK" パネルに切り替える
        //  インスタンス名bookButton
-       JButton bookButton = new JButton("本の登録");
-       bookButton.addActionListener(e -> frame.showPanel("BOOK"));
+       JButton dvdButton = new JButton("DVDの登録");
+       dvdButton.addActionListener(e -> frame.showPanel("DVD"));
        
        // 「会員登録」ボタンの設定　インスタンス名memberButton 
        JButton memberButton = new JButton("会員登録");
@@ -30,7 +30,7 @@ public class TopPanel extends JPanel {
        JButton listButton = new JButton("貸出中一覧");
        listButton.addActionListener(e -> frame.showPanel("LIST"));
 
-        add(bookButton);
+        add(dvdButton);
         add(memberButton);
         add(lendButton);
         add(returnButton);

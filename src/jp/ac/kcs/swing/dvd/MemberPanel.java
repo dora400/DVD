@@ -22,7 +22,7 @@ public class MemberPanel extends JPanel {
     	JButton baeckButton = new JButton("TOPへ");
         //登録ボタンリスナーで押されたらDBのインサート発動
         registerBtn.addActionListener(e -> {
-    		DB.insertMember(idField.getText(), nameField.getText());
+        	Rental.insertMember(idField.getText(), nameField.getText());
     		JOptionPane.showMessageDialog(this, "会員登録が完了しました。");
     	});
         

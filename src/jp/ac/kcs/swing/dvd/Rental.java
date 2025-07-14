@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DB {
+public class Rental {
     //DBアクセス＆ユーザー名とパスワード
 	private final static String URL = "jdbc:mysql://localhost/library";
 	private final static String USER = "root";

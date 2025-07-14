@@ -21,7 +21,7 @@ public class BookPanel extends JPanel {
 
         //登録ボタンが押されたらIDとタイトル
     	registerBtn.addActionListener(e -> {
-    		DB.insertBook(codeField.getText(), titleField.getText());
+    		Rental.insertBook(codeField.getText(), titleField.getText());
     		JOptionPane.showMessageDialog(this, "登録しました。");
     	});
         //TOPに戻るボタン

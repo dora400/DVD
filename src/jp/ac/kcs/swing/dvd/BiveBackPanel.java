@@ -8,8 +8,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class ReturnPanel extends JPanel {
-    public ReturnPanel(MainFrame frame) {
+public class BiveBackPanel extends JPanel {
+    public BiveBackPanel(MainFrame frame) {
     	setLayout(new GridLayout(4, 2));
         //ボタンとか作成
     	JTextField codeField = new JTextField(); 
@@ -20,7 +20,7 @@ public class ReturnPanel extends JPanel {
 
         //DB返却処理
     	returnBtn.addActionListener(e -> {
-    		DB.returnBook(codeField.getText());
+    		Rental.returnBook(codeField.getText());
     		JOptionPane.showMessageDialog(this, "返却が完了しました。");
     	});
 
