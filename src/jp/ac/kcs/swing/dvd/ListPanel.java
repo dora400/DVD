@@ -17,7 +17,7 @@ public class ListPanel extends JPanel {
         JTextArea area =new JTextArea();
         area.setEditable(false);
         //Listを作成string型
-        List<String> books = DB.getLentBooks();
+        List<String> books = Rental.getLentBooks();
         for(String book:books) {
         	area.append(book + "\n");
         }
