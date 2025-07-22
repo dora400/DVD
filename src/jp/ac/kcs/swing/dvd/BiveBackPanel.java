@@ -32,7 +32,7 @@ public class BiveBackPanel extends JPanel {
 
 
         //パネルに部品の追加
-    	add(new JLabel("書籍コード"));
+    	add(new JLabel("DVDコード"));
     	add(codeField);
     	add(returnBtn);
     	add(backBtn);
