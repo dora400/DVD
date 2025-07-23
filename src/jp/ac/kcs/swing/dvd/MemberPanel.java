@@ -29,7 +29,7 @@ public class MemberPanel extends JPanel {
 
         //TOPに戻るボタン
         baeckButton.addActionListener(e -> frame.showPanel("TOP"));
-
+        //コメント	
         //カードに部品を追加
         add(new JLabel("ID"));
     	add(idField);
@@ -37,12 +37,5 @@ public class MemberPanel extends JPanel {
     	add(nameField);
     	add(registerBtn);
     	add(baeckButton);
-
-
-
-
-
-
-
     }
 }
