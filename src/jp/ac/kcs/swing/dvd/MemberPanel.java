@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 public class MemberPanel extends JPanel {
     public MemberPanel(MainFrame frame) {
         //レイアウトに新しいGridLayout(3, 2)
-    	setLayout(new GridLayout(4, 2));
+    	setLayout(new GridLayout(3, 2));
         //IDのテキストフィールド
     	JTextField idField = new JTextField(); 
         //名前のテキストフィールド
