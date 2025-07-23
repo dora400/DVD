@@ -20,7 +20,7 @@ public class BiveBackPanel extends JPanel {
 
         //DB返却処理
     	returnBtn.addActionListener(e -> {
-    		Rental.returnBook(codeField.getText());
+    		Rental.returnDvd(codeField.getText());
     		JOptionPane.showMessageDialog(this, "返却が完了しました。");
     	});
 
@@ -32,7 +32,7 @@ public class BiveBackPanel extends JPanel {
 
 
         //パネルに部品の追加
-    	add(new JLabel("書籍コード"));
+    	add(new JLabel("DVDコード"));
     	add(codeField);
     	add(returnBtn);
     	add(backBtn);

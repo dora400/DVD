@@ -17,9 +17,9 @@ public class ListPanel extends JPanel {
         JTextArea area =new JTextArea();
         area.setEditable(false);
         //Listを作成string型
-        List<String> books = Rental.getLentBooks();
-        for(String book:books) {
-        	area.append(book + "\n");
+        List<String> dvds = Rental.getLentDvds();
+        for(String dvd:dvds) {
+        	area.append(dvd + "\n");
         }
         //TOP戻るボタン
         JButton backBtn = new JButton("TOPへ");
