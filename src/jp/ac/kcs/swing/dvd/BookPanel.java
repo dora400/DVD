@@ -11,28 +11,26 @@ import javax.swing.JTextField;
 public class BookPanel extends JPanel {
     public BookPanel(MainFrame frame) {
         //レイアウトに新しいGridLayout(3, 2)
-    	setLayout(new GridLayout(4, 2));
-
-
+    	//レイアウトに新しいGridLayout(3, 2)
+    	setLayout (new GridLayout(3,2));
         //ボタンやフィールド作成
-    	JButton registerBtn = new JButton("登録");
-    	JTextField codeField = new JTextField(); 
-    	JTextField titleField = new JTextField(); 
-
-        //登録ボタンが押されたらIDとタイトル
-    	registerBtn.addActionListener(e -> {
-    		Rental.insertBook(codeField.getText(), titleField.getText());
-    		JOptionPane.showMessageDialog(this, "登録しました。");
-    	});
-        //TOPに戻るボタン
-    	JButton baeckButton = new JButton("TOPへ");
-        baeckButton.addActionListener(e -> frame.showPanel("TOP"));
-        //パネルに部品追加
-    	add(new JLabel("本のコード"));
-    	add(codeField);
+        JTextField codeFiled=new JTextField();
+        JTextField titleFiled=new JTextField();
+        JButton registerBtn=new JButton("登録");
+        JButton backBtn=new JButton("TOPへ戻る");
+    	//登録ボタンが押されたらIDとタイトル
+        registerBtn.addActionListener(e->{
+  		DB.insertDvd(codeFiled.getText(), titleFiled.getText());
+	    JOptionPane.showMessageDialog(this,"登録しました。");
+        });
+    	//TOPに戻るボタン
+    	backBtn.addActionListener(e->frame.showPanel("TOP"));
+    	//パネルに部品追加
+    	add(new JLabel("DVDコード"));
+    	add(codeFiled);
     	add(new JLabel("タイトル"));
-    	add(titleField);
+    	add(titleFiled);
     	add(registerBtn);
-    	add(baeckButton);
+    	add(backBtn);
     }
 }
