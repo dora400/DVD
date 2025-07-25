@@ -9,19 +9,35 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class BookPanel extends JPanel {
-    public BookPanel(MainFrame frame) {
-        //レイアウトに新しいGridLayout(3, 2)
-    	//レイアウトに新しいGridLayout(3, 2)
-    	setLayout (new GridLayout(3,2));
+  
+        
+    	
         //ボタンやフィールド作成
-        JTextField codeFiled=new JTextField();
-        JTextField titleFiled=new JTextField();
-        JButton registerBtn=new JButton("登録");
-        JButton backBtn=new JButton("TOPへ戻る");
+        private JTextField codeFiled;
+        private JTextField titleFiled;
+        private JButton registerBtn;
+        private JButton backBtn;
+        private MainFrame parentFrame;
+        public BookPanel(MainFrame frame) {
+        	this.parentFrame=frame;
+        	setLayout (new GridLayout(3,2));
+        	codeFiled=new JTextField(10);
+        	titleFiled=new JTextField(20);
+        	registerBtn=new JButton("登録");
+        	backBtn=new JButton("TOPへ戻る");
     	//登録ボタンが押されたらIDとタイトル
+       
+        	
         registerBtn.addActionListener(e->{
-  		DB.insertDvd(codeFiled.getText(), titleFiled.getText());
-	    JOptionPane.showMessageDialog(this,"登録しました。");
+        	String code =  codeFiled.getText();
+        	String title = titleFiled.getText();
+        	 if(!code.matches("\\+")) {
+             	JOptionPane.showMessageDialog(this,"DVDコードは数字で入力してください。","入力エラー",JOptionPane.ERROR_MESSAGE);
+        	 }else {
+             	db.insertDvd(code,title);
+             	JOptionPane.showMessageDialog(this,"DVDコードとタイトルを登録しました。","登録完了",
+             	JOptionPane.INFORMATION_MESSAGE);
+        	 }	
         });
     	//TOPに戻るボタン
     	backBtn.addActionListener(e->frame.showPanel("TOP"));
