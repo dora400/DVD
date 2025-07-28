@@ -34,7 +34,7 @@ public class BookPanel extends JPanel {
         	 if(!code.matches("\\+")) {
              	JOptionPane.showMessageDialog(this,"DVDコードは数字で入力してください。","入力エラー",JOptionPane.ERROR_MESSAGE);
         	 }else {
-             	db.insertDvd(code,title);
+             	DB.insertDvd(code,title);
              	JOptionPane.showMessageDialog(this,"DVDコードとタイトルを登録しました。","登録完了",
              	JOptionPane.INFORMATION_MESSAGE);
         	 }	
