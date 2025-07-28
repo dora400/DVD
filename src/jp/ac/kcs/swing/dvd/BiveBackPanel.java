@@ -1,6 +1,8 @@
 package jp.ac.kcs.swing.dvd;
 
 import java.awt.GridLayout;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -15,6 +17,16 @@ public class BiveBackPanel extends JPanel {
     	JTextField codeField = new JTextField(); 
     	JButton returnBtn = new JButton("返却");
     	JButton backBtn = new JButton("TOPへ");
+    	codeField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                // 半角文字以外をブロック
+                if (!Character.isISOControl(c) && !(c >= 32 && c <= 126)) {
+                    e.consume();
+                }
+            }
+        });
 
 
 
@@ -32,7 +44,7 @@ public class BiveBackPanel extends JPanel {
 
 
         //パネルに部品の追加
-    	add(new JLabel("DVDコード"));
+    	add(new JLabel("DVDコード　　半角で入力してください"));
     	add(codeField);
     	add(returnBtn);
     	add(backBtn);
