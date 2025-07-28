@@ -20,7 +20,10 @@ public class RentPanel extends JPanel {
 
         //DB実行
     	rental.addActionListener(e -> {
+
     		DB.insertDvd(memberidField.getText(), DVDCodeField.getText());
+
+    	
     		JOptionPane.showMessageDialog(this, "貸出しました。");
     	});
 
@@ -31,7 +34,11 @@ public class RentPanel extends JPanel {
         //部品追加
     	add(new JLabel("会員ID"));
     	add(memberidField);
+
     	add(new JLabel("DVDコード"));
+
+    	add(new JLabel("書籍コード"));
+
     	add(DVDCodeField);
     	add(rental);
     	add(top);
