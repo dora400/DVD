@@ -31,7 +31,7 @@ public class BookPanel extends JPanel {
         registerBtn.addActionListener(e->{
         	String code =  codeFiled.getText();
         	String title = titleFiled.getText();
-        	 if(!code.matches("\\+")) {
+        	 if(!code.matches("\\d+")) {
              	JOptionPane.showMessageDialog(this,"DVDコードは数字で入力してください。","入力エラー",JOptionPane.ERROR_MESSAGE);
         	 }else {
              	Rental.insertDvd(code,title);
