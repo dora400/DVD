@@ -21,7 +21,7 @@ public class RentPanel extends JPanel {
         //DB実行
     	rental.addActionListener(e -> {
 
-    		DB.insertDvd(memberidField.getText(), DVDCodeField.getText());
+    		Rental.rentDvd(memberidField.getText(), DVDCodeField.getText());
 
     	
     		JOptionPane.showMessageDialog(this, "貸出しました。");
