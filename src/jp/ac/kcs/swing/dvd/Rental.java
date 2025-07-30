@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Rental {
     //DBアクセス＆ユーザー名とパスワード
-	private final static String URL = "jdbc:mysql://localhost/library";
+	private final static String URL = "jdbc:mysql://localhost/rental";
 	private final static String USER = "root";
 	private final static String PASS = "";
 
