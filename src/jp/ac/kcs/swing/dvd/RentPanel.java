@@ -25,7 +25,7 @@ public class RentPanel extends JPanel {
         	 if(!code.matches("\\d+")) {
              	JOptionPane.showMessageDialog(this,"DVDコードは数字で入力してください。","入力エラー",JOptionPane.ERROR_MESSAGE);
         	 }else {
-             	Rental.lendBook(id,code);
+             	Rental.rentDvd(id,code);
              	JOptionPane.showMessageDialog(this,"貸出しました。","会員IDとDVDコードを受け取りました。",
              	JOptionPane.INFORMATION_MESSAGE);
         	 }
