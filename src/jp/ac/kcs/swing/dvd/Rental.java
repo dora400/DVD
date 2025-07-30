@@ -60,7 +60,7 @@ public class Rental {
     //DVDの返却済み
 	public static void returnDvd(String code) {
 		try(Connection conn = DriverManager.getConnection(URL, USER, PASS);
-			PreparedStatement ps = conn.prepareStatement("UPDATE book SET is_lent = false WHERE code = ?")){
+			PreparedStatement ps = conn.prepareStatement("UPDATE dvd SET is_lent = false WHERE code = ?")){
 			ps.setString(1,code);
 			ps.executeUpdate();
 			
