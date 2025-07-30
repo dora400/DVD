@@ -72,7 +72,7 @@ public class Rental {
 
 
     //貸し出し中のDVDリスト
-	public static List<String> getLentDvds() {
+	public static List<String> getRentDvds() {
 		List<String> dvds =new ArrayList<>();
 		try(Connection conn = DriverManager.getConnection(URL, USER, PASS);
 			Statement st = conn.createStatement();
