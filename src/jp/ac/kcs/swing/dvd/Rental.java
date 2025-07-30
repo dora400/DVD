@@ -44,7 +44,7 @@ public class Rental {
     
     
     //DVDを貸出状態に更新する処理 
-	public static void lendDvd(String memberid, String DVDCode) {
+	public static void rentDvd(String memberid, String DVDCode) {
 		try(Connection conn = DriverManager.getConnection(URL, USER, PASS);
 			PreparedStatement ps = conn.prepareStatement("UPDATE dvd SET is_lent = true WHERE code = ?")){
 			ps.setString(1,DVDCode);
