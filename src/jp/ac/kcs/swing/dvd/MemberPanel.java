@@ -22,11 +22,17 @@ public class MemberPanel extends JPanel {
     	JButton baeckButton = new JButton("TOPへ");
         //登録ボタンリスナーで押されたらDBのインサート発動
         registerBtn.addActionListener(e -> {
-        	Rental.insertMember(idField.getText(), nameField.getText());
-    		JOptionPane.showMessageDialog(this, "会員登録が完了しました。");
-    	});
+        	//半角のみ使える（全角だとエラー）
+        String id   = idField.getText();
+        String name = nameField.getText();
+        	if(!id.matches("\\p{ASCII}*")) {
+        		JOptionPane.showMessageDialog(this, "半角英数字で入力してください。");
+        		return;
+        	}
+        	Rental.insertMember(id, name);
+        	JOptionPane.showMessageDialog(this, "会員登録が完了しました。");
+        });
         
-
         //TOPに戻るボタン
         baeckButton.addActionListener(e -> frame.showPanel("TOP"));
         //コメント	
