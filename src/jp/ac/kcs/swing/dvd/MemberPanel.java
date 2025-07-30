@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 public class MemberPanel extends JPanel {
     public MemberPanel(MainFrame frame) {
         //レイアウトに新しいGridLayout(3, 2)
-    	setLayout(new GridLayout(4, 2));
+    	setLayout(new GridLayout(3, 2));
         //IDのテキストフィールド
     	JTextField idField = new JTextField(); 
         //名前のテキストフィールド
@@ -29,7 +29,7 @@ public class MemberPanel extends JPanel {
 
         //TOPに戻るボタン
         baeckButton.addActionListener(e -> frame.showPanel("TOP"));
-
+        //コメント	
         //カードに部品を追加
         add(new JLabel("ID"));
     	add(idField);
@@ -37,12 +37,5 @@ public class MemberPanel extends JPanel {
     	add(nameField);
     	add(registerBtn);
     	add(baeckButton);
-
-
-
-
-
-
-
     }
 }
