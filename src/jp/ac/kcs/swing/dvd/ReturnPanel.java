@@ -8,8 +8,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class BiveBackPanel extends JPanel {
-    public BiveBackPanel(MainFrame frame) {
+public class ReturnPanel extends JPanel {
+    public ReturnPanel(MainFrame frame) {
     	setLayout(new GridLayout(4, 2));
         //ボタンとか作成
     	JTextField codeField = new JTextField(); 
@@ -20,7 +20,7 @@ public class BiveBackPanel extends JPanel {
 
         //DB返却処理
     	returnBtn.addActionListener(e -> {
-    		Rental.returnDvd(codeField.getText());
+    		DB.returnBook(codeField.getText());
     		JOptionPane.showMessageDialog(this, "返却が完了しました。");
     	});
 
@@ -32,7 +32,7 @@ public class BiveBackPanel extends JPanel {
 
 
         //パネルに部品の追加
-    	add(new JLabel("DVDコード"));
+    	add(new JLabel("書籍コード"));
     	add(codeField);
     	add(returnBtn);
     	add(backBtn);

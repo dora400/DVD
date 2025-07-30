@@ -13,28 +13,34 @@ public class RentPanel extends JPanel {
     	setLayout(new GridLayout(4, 2));
         //ボタンとかフィールド作成
     	JTextField memberidField = new JTextField(); 
-    	JTextField bookCodeField = new JTextField(); 
-    	JButton lendBtn = new JButton("貸出");
-    	JButton backBtn = new JButton("TOPへ");
+    	JTextField DVDCodeField = new JTextField(); 
+    	JButton rental = new JButton("レンタル");
+    	JButton top = new JButton("TOPへ");
 
 
         //DB実行
-    	lendBtn.addActionListener(e -> {
-    		Rental.lendBook(memberidField.getText(), bookCodeField.getText());
+    	rental.addActionListener(e -> {
+
+    		DB.insertDvd(memberidField.getText(), DVDCodeField.getText());
+
+    	
     		JOptionPane.showMessageDialog(this, "貸出しました。");
     	});
 
 
         //TOP戻る
-    	backBtn.addActionListener(e -> frame.showPanel("TOP"));
+    	top.addActionListener(e -> frame.showPanel("TOP"));
 
         //部品追加
     	add(new JLabel("会員ID"));
     	add(memberidField);
-    	add(new JLabel("書籍コード"));
-    	add(bookCodeField);
-    	add(lendBtn);
-    	add(backBtn);
 
+    	add(new JLabel("DVDコード"));
+
+    	add(new JLabel("書籍コード"));
+
+    	add(DVDCodeField);
+    	add(rental);
+    	add(top);
     }
 }

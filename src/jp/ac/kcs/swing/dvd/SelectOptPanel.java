@@ -9,7 +9,7 @@ public class SelectOptPanel extends JPanel {
     public SelectOptPanel(MainFrame frame) {
        frame.setLayout(new GridLayout(6, 1, 10, 10));
 
-       // 「本の登録」ボタンを作成し、クリックされたら "BOOK" パネルに切り替える
+       // 「DVDの登録」ボタンを作成し、クリックされたら "BOOK" パネルに切り替える
        //  インスタンス名bookButton
        JButton dvdButton = new JButton("DVDの登録");
        dvdButton.addActionListener(e -> frame.showPanel("DVD"));

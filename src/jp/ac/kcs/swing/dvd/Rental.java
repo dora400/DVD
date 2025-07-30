@@ -29,10 +29,10 @@ public class Rental {
 		}
 	}
 
-    //本の登録
-	public static void insertBook(String code, String title) {
+    //DVDの登録
+	public static void insertDvd(String code, String title) {
 		try(Connection conn = DriverManager.getConnection(URL, USER, PASS);
-			PreparedStatement ps = conn.prepareStatement("INSERT INTO book (code, title, is_lent) VALUES (?,?,false)")){
+			PreparedStatement ps = conn.prepareStatement("INSERT INTO dvd (code, title, is_lent) VALUES (?,?,false)")){
 			ps.setString(1,code);
 			ps.setString(2,title);
 			ps.executeUpdate();
@@ -43,11 +43,11 @@ public class Rental {
 	}
     
     
-    //本を貸出状態に更新する処理 
-	public static void lendBook(String memberid, String bookCode) {
+    //DVDを貸出状態に更新する処理 
+	public static void lendDvd(String memberid, String DVDCode) {
 		try(Connection conn = DriverManager.getConnection(URL, USER, PASS);
-			PreparedStatement ps = conn.prepareStatement("UPDATE book SET is_lent = true WHERE code = ?")){
-			ps.setString(1,bookCode);
+			PreparedStatement ps = conn.prepareStatement("UPDATE dvd SET is_lent = true WHERE code = ?")){
+			ps.setString(1,DVDCode);
 			ps.executeUpdate();
 			
 		}catch (SQLException e) {
@@ -57,10 +57,10 @@ public class Rental {
 
 
 
-    //本の返却済み
-	public static void returnBook(String code) {
+    //DVDの返却済み
+	public static void returnDvd(String code) {
 		try(Connection conn = DriverManager.getConnection(URL, USER, PASS);
-			PreparedStatement ps = conn.prepareStatement("UPDATE book SET is_lent = false WHERE code = ?")){
+			PreparedStatement ps = conn.prepareStatement("UPDATE dvd SET is_lent = false WHERE code = ?")){
 			ps.setString(1,code);
 			ps.executeUpdate();
 			
@@ -71,19 +71,19 @@ public class Rental {
 
 
 
-    //貸し出し中の本リスト
-	public static List<String> getLentBooks() {
-		List<String> books =new ArrayList<>();
+    //貸し出し中のDVDリスト
+	public static List<String> getLentDvds() {
+		List<String> dvds =new ArrayList<>();
 		try(Connection conn = DriverManager.getConnection(URL, USER, PASS);
 			Statement st = conn.createStatement();
-			ResultSet rs = st.executeQuery("SELECT code, title FROM book WHERE is_lent = true")){
+			ResultSet rs = st.executeQuery("SELECT code, title FROM dvd WHERE is_lent = true")){
 			while(rs.next()) {
-				books.add(rs.getString("code") + "-" + rs.getString("title"));
+				dvds.add(rs.getString("code") + "-" + rs.getString("title"));
 			}
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return books;
+		return dvds;
 	}
 
 

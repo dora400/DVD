@@ -10,7 +10,7 @@ public class MainFrame extends JFrame {
     private JPanel cardPanel;
 
     public MainFrame() {
-        setTitle("図書館システム");
+        setTitle("DVD管理システム");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600, 400);
 
@@ -19,7 +19,7 @@ public class MainFrame extends JFrame {
 
         // すべての機能パネルを登録
         cardPanel.add(new SelectOptPanel(this), "TOP");
-        cardPanel.add(new BookPanel(this), "BOOK");
+        cardPanel.add(new BookPanel(this), "DVD");
         cardPanel.add(new MemberPanel(this), "MEMBER");
         cardPanel.add(new RentPanel(this), "LEND");
         cardPanel.add(new BiveBackPanel(this), "RETURN");
